@@ -25,9 +25,9 @@ $accent-color: #3CA2A2;    // original =)
 //$accent-color: #52B54B;  // green
 
 $font-color: #dddddd;
-$background-color: #292929;
-$post-panel-color: #444;
-$footer-background-color: #292c2f;
+$background-color: #191919;
+$post-panel-color: #333;
+$footer-background-color: #191c1f;
 $note-color: #87CEFA;
 $warning-color: #ffff00;
 // use this or pick any from /css/pics/background folder or from transparenttextures.com
@@ -184,7 +184,7 @@ h2.post-title {
 }
 div.post-meta {
   border-width: 1px 0;
-  border-color: #666666;
+  border-color: #555555;
   border-style: solid;
   margin: 0 0 20px;
   ul {
@@ -281,7 +281,7 @@ nav.shrink .navbar-toggle {
 //********************************************************
 
 .post-content > table {
-  background-color: #333333;
+  background-color: #222222;
   margin: 0 auto 10px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -310,7 +310,7 @@ table.inner-borders {
   border-collapse: collapse;
   border-style: hidden;
   td {
-    border: 1px solid #5e5e5e;
+    border: 1px solid #4e4e4e;
   }
 }
 
@@ -338,7 +338,7 @@ table.inner-borders {
 //            Table of content (work in progress)
 //********************************************************
 .toc {
-  background-color: #2c2c2c;
+  background-color: #1c1c1c;
   margin-left: -19px;
   margin-right: -19px;
 }
@@ -351,7 +351,7 @@ table.inner-borders {
 .box {
 	width:70%;
 	height:200px;
-	background:#FFF;
+	background:#EEE;
 	margin:40px auto;
 }
 .wrapper{
@@ -383,7 +383,7 @@ table.inner-borders {
 .filename{
   padding: 0px;
   margin: 0px;
-  background-color: #292929;
+  background-color: #191919;
   color: lightgrey;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
