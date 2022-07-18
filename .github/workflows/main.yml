@@ -2,6 +2,9 @@
 
 name: build-and-deploy
 
+env:
+  PUBLISH_DIR: release
+
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
@@ -29,24 +32,24 @@ jobs:
     
     # publishes Blazor project to the release-folder
     - name: Publish .NET Core Project
-      run: dotnet publish MarcelGrilo.Github.IO.csproj -c Release -o release --nologo
+      run: dotnet publish MarcelGrilo.Github.IO.csproj -c Release -o ${{ env.PUBLISH_DIR }} --nologo
       
     # base href url value should be changed so that resources like CSS and scripts can load properly. 
     #- name: Rewrite base href
     #  if: success()
     #  uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
     #  with:
-    #    html_path: ${{ env.PUBLISH_DIR }}/index.html
+    #    html_path: ${{ env.PUBLISH_DIR }}/wwwroot/index.html
     #    base_href: REPOSITORY_NAME
 
     # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. 
     # Allow files and folders starting with an underscore.
     - name: Add .nojekyll file
-      run: touch ${{ env.PUBLISH_DIR }}/.nojekyll
+      run: touch ${{ env.PUBLISH_DIR }}/wwwroot/.nojekyll
       
     - name: Commit wwwroot to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: release/wwwroot
+        FOLDER: ${{ env.PUBLISH_DIR }}/wwwroot
